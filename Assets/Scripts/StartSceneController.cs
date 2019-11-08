@@ -12,7 +12,7 @@ public class StartSceneController : MonoBehaviour
 
     public void CreditsButton()
     {
-        SceneManager.LoadScene("CreditsScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("CreditScene", LoadSceneMode.Single);
     }
 
     public void QuitButton()
