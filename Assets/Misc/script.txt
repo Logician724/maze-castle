@@ -1,0 +1,59 @@
+You are exploring an old castle in look for an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; you do not know what awaits ahead.
+
+A) Pick the right door
+B) Pick the left door
+
+=============RIGHT (First time)=============
+You found a torch, and a door lies ahead of you, but you can smell a filthy stench. Do you wanna find out its source?
+
+A) Check the source of the stench.
+		GAME OVER ==> (ATTACKED BY ZOMBIES)
+B) Turn back. It may be dangerous.
+============================================
+
+=============RIGHT (Further times)=============
+Oh, you are back again. Still curious about that stench?
+
+A) Yes! Let's see what is behind that door.
+		GAME OVER ==> (ATTACKED BY ZOMBIES)
+B) No...I am going back. 
+============================================
+
+=============LEFT (NO TORCH)==============
+You can not see anything. It is totally dark.
+
+A) Move forward. Hopefully, you will bump into a door.
+		GAME OVER ==> (ATTACKED BY ZOMBIES)
+B) Turn back. Maybe try the other door.
+==========================================
+
+=============LEFT (TORCH, First Time)=================
+You see a door on the opposite wall.
+
+A) Let's see what is behind it.
+B) Hmmm...no... let's go back again. 
+======================================================
+
+=============LEFT (TORCH, Other times)=================
+We are back here again.
+
+A) Go through the door.
+B) Turn back to the main hall.
+==========================================
+
+==============LEFT & TORCH & DOOR=========
+Ah sh*t, here we go again!
+You can feel a breeze coming from the left door. Could it be the way out?
+
+A) Pick the right door 
+B) Pick the left door
+		GAME OVER ==> (FELL INTO A PIT)
+C) Go back
+==========================================
+
+=============ALL CORRECT CHOICES==========
+Oh you found the treasure. Good job!
+==========================================
+
+
+
