@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MonsterAttackController : MonoBehaviour
 {
@@ -26,21 +27,18 @@ public class MonsterAttackController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (phase == 0)
+        if (phase == 3 && playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Dies") && playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
         {
-            var heading = deathArea.transform.position - player.transform.position;
-            var distance = heading.magnitude;
-            var direction = heading / distance;
+            SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
+        }
 
-            player.transform.rotation = Quaternion.LookRotation(direction);
-            if (distance < 0.5)
-            {
-                playerAnimator.SetTrigger("Idle");
-                zombie1Animator.SetTrigger("WalksToPlayer");
-                zombie2Animator.SetTrigger("WalksToPlayer");
+        if (phase == 2 && playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 3)
+        {
+            playerAnimator.SetTrigger("Dies");
+            zombie1Animator.SetTrigger("Idle");
+            zombie2Animator.SetTrigger("Idle");
 
-                phase++;
-            }
+            phase++;
         }
 
         if (phase == 1)
@@ -67,13 +65,27 @@ public class MonsterAttackController : MonoBehaviour
             }
         }
 
-        if (phase == 2 && playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 3)
+        if (phase == 0)
         {
-            playerAnimator.SetTrigger("Dies");
-            zombie1Animator.SetTrigger("Idle");
-            zombie2Animator.SetTrigger("Idle");
+            var heading = deathArea.transform.position - player.transform.position;
+            var distance = heading.magnitude;
+            var direction = heading / distance;
 
-            phase++;
+            player.transform.rotation = Quaternion.LookRotation(direction);
+            if (distance < 0.5)
+            {
+                playerAnimator.SetTrigger("Idle");
+                zombie1Animator.SetTrigger("WalksToPlayer");
+                zombie2Animator.SetTrigger("WalksToPlayer");
+
+                phase++;
+            }
         }
+
+        
+
+        
+
+        
     }
 }
