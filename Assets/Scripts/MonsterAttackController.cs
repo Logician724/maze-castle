@@ -14,7 +14,6 @@ public class MonsterAttackController : MonoBehaviour
     Animator zombie2Animator;
 
     int phase = 0;
-    float speed = 0.015f;
 
     // Start is called before the first frame update
     void Start()
