@@ -8,6 +8,10 @@ public class pitScript : MonoBehaviour
     private AudioSource src;
     private bool isFalling = false;
     private bool soundTriggered = false;
+
+
+    private float startFall;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +31,24 @@ public class pitScript : MonoBehaviour
                 anim.SetBool("AtPit", true);
                 isFalling = true;
             }
-        } else if(isFalling && tmp[0].clip.name.Equals("plFalling"))
+        }
+        else if (isFalling && tmp[0].clip.name.Equals("plFalling"))
         {
             anim.applyRootMotion = false;
+
             if (!soundTriggered)
             {
+                startFall = Time.timeSinceLevelLoad;
                 soundTriggered = true;
                 src.PlayOneShot(src.clip);
             }
 
-            if(src.time == 4)
+            if (isFalling && Time.timeSinceLevelLoad - startFall >= 4)
             {
                 Debug.Log("Game Over");
             }
+
         }
+
     }
 }
