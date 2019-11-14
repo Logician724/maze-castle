@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class stateSound : StateMachineBehaviour
 {
-    public AudioClip walk;
+    public AudioClip zWalk;
     public AudioClip punch;
     public AudioClip die;
+    public AudioClip door;
+    public AudioClip playerWalk;
 
     private AudioSource audioSrc;
 
@@ -20,11 +22,18 @@ public class stateSound : StateMachineBehaviour
 
         if (stateInfo.IsTag("walk"))
         {
-            audioSrc.PlayOneShot(walk);
+            audioSrc.PlayOneShot(zWalk);
         }
-        else if(stateInfo.IsTag("die"))
+        else if (stateInfo.IsTag("die"))
         {
             audioSrc.PlayOneShot(die);
+        }
+        else if (stateInfo.IsTag("door"))
+        {
+            audioSrc.PlayOneShot(door);
+        } else if (stateInfo.IsTag("playWalk"))
+        {
+            audioSrc.PlayOneShot(playerWalk);
         }
     }
 
@@ -33,7 +42,7 @@ public class stateSound : StateMachineBehaviour
     {
         if (stateInfo.IsTag("attack"))
         {
-            if(idx == 3)
+            if (idx == 3)
             {
                 return;
             }
@@ -57,14 +66,13 @@ public class stateSound : StateMachineBehaviour
                 audioSrc.PlayOneShot(punch);
                 idx++;
             }
-            
+
         }
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
-
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
