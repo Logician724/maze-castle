@@ -239,7 +239,8 @@ namespace Cinemachine.Editor
 
         private static Vector2 sScrollPosition = Vector2.zero;
 
-        [PreferenceItem("Cinemachine")]
+        [Obsolete]
+        [SettingsProvider]
         private static void OnGUI()
         {
             if (CinemachineHeader != null)
