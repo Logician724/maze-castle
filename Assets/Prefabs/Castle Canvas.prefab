@@ -117,7 +117,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4330936893603592343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002972859}
+        m_MethodName: DisableCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4330936893915837473
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 19.400024, y: -21.6}
+  m_AnchoredPosition: {x: 19.400146, y: -21.6}
   m_SizeDelta: {x: -38.9, y: 292.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4330936893915837474
@@ -288,6 +299,7 @@ GameObject:
   - component: {fileID: 4330936894040433422}
   - component: {fileID: 4330936894040433423}
   - component: {fileID: 4330936894040433420}
+  - component: {fileID: 1002972859}
   m_Layer: 5
   m_Name: Castle Canvas
   m_TagString: Untagged
@@ -377,6 +389,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1002972859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330936894040433421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80835408506569f41bd4f5de22f7c0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4330936894598010520
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4, y: 0.25}
   m_AnchorMax: {x: 0.4, y: 0.25}
-  m_AnchoredPosition: {x: -0.000030517578, y: -184.9}
+  m_AnchoredPosition: {x: 0.000015258789, y: -184.9}
   m_SizeDelta: {x: 515.6, y: 184.90002}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &4330936894598010524
@@ -494,7 +518,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4330936894598010525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1002972859}
+        m_MethodName: DisableCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4330936895093430788
 GameObject:
   m_ObjectHideFlags: 0
