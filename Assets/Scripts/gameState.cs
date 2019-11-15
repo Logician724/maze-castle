@@ -7,4 +7,15 @@
     public static bool isTorchRoom = false;
 
     public static bool goodGameOver = false;
+
+    public static void reset()
+    {
+        hasTorch = false;
+        mainRoomFirstTime = true;
+
+        isFirstRoom = true;
+        isTorchRoom = false;
+
+        goodGameOver = false;
+    }
 }

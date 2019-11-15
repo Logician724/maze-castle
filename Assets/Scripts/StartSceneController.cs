@@ -7,6 +7,7 @@ public class StartSceneController : MonoBehaviour
 {
     public void StartButton()
     {
+        GameState.reset();
         SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 

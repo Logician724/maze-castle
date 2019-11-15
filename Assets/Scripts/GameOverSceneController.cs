@@ -16,6 +16,7 @@ public class GameOverSceneController : MonoBehaviour
 
     public void RestartButton()
     {
+        GameState.reset();
         SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 
