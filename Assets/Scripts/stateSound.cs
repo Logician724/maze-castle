@@ -34,7 +34,13 @@ public class stateSound : StateMachineBehaviour
         }
         else if (stateInfo.IsTag("playWalk"))
         {
+            audioSrc.pitch = 1.5f;
             audioSrc.PlayOneShot(playerWalk);
+        }
+        else if (stateInfo.IsTag("pickChest"))
+        {
+            audioSrc.pitch = 1;
+            audioSrc.Play();
         }
     }
 

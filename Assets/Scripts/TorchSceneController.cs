@@ -26,14 +26,13 @@ public class TorchSceneController : MonoBehaviour
         playerAnimator = player.GetComponent<Animator>();
         playerScript = player.GetComponent<PlayerWithTorch>();
 
-        text.text = GameState.rightRoomFirstTime ? "You found a torch, and a locked door lies on your left, " +
-            "but you can smell a filthy stench from the right one. Do you wanna find out its source?" :
-            "Oh, you are back again. Still curious about that stench?";
-        choice1.text = GameState.rightRoomFirstTime ? "Check the source of the stench." : "Yes! Let's see what is behind that door.";
-        choice2.text = GameState.rightRoomFirstTime ? "Turn back. It may be dangerous." : "No...I am going back.";
+        text.text = "You found a torch, and a locked door lies on your left, " +
+            "but you can smell a filthy stench from the right one. Do you wanna find out its source?";
+        choice1.text = "Check the source of the stench.";
+        choice2.text = "Turn back. It may be dangerous.";
 
-        choice1.fontSize = GameState.rightRoomFirstTime ? 40 : 40;
-        choice2.fontSize = GameState.rightRoomFirstTime ? 40 : 40;
+        choice1.fontSize = 40;
+        choice2.fontSize = 40;
     }
 
     // Update is called once per frame
@@ -83,13 +82,12 @@ public class TorchSceneController : MonoBehaviour
     public void GoRight()
     {
         sceneState = "walkToDoor";
-        GameState.rightRoomFirstTime = false;
     }
 
     public void GoBack()
     {
-        GameState.rightRoomFirstTime = false;
-        GameState.firstOrLastRoom = true;
+        GameState.isTorchRoom = false;
+        GameState.isFirstRoom = true;
         SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 

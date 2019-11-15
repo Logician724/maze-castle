@@ -28,7 +28,7 @@ public class CastleStartController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameState.firstOrLastRoom)
+        if (GameState.isFirstRoom)
         {
             torch1.SetActive(true);
             torch2.SetActive(true);
@@ -38,6 +38,15 @@ public class CastleStartController : MonoBehaviour
             "you do not know what awaits ahead." : "So, where do you wanna go now?";
             choice1.text = "Go Right";
             choice2.text = "Go Left";
+        }
+        else if (GameState.isTorchRoom)
+        {
+            text.text = "Oh, you are back again. Still curious about that stench?";
+            choice1.text = "Yes! Let's see what is behind that door.";
+            choice2.text = "No...I am going back.";
+
+            choice1.fontSize = 40;
+            choice2.fontSize = 40;
         }
         else
         {
@@ -110,26 +119,41 @@ public class CastleStartController : MonoBehaviour
     private bool IsDoorCloseby(GameObject player, GameObject door)
     {
         return Vector2.Distance(player.transform.position, door.transform.position) <= 6.5;
-
     }
 
     public void MoveRight()
     {
-        isRightDoorChosen = true;
-        GameState.mainRoomFirstTime = false;
-        playerAnimator.SetTrigger("walk");
-
+        if (GameState.isFirstRoom || GameState.isTorchRoom || GameState.hasTorch)
+        {
+            isRightDoorChosen = true;
+            GameState.mainRoomFirstTime = false;
+            playerAnimator.SetTrigger("walk");
+        }
+        else
+        {
+            SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
+        }
     }
 
     public void MoveLeft()
     {
-        GameState.mainRoomFirstTime = false;
-        playerAnimator.SetTrigger("walk");
+        if (GameState.isFirstRoom || (GameState.hasTorch && !GameState.isFirstRoom && !GameState.isTorchRoom))
+        {
+            isRightDoorChosen = false;
+            GameState.mainRoomFirstTime = false;
+            playerAnimator.SetTrigger("walk");
+        }
+        else
+        {
+            GameState.isTorchRoom = false;
+            GameState.isFirstRoom = true;
+            SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
+        }
     }
 
     public void MoveBack()
     {
-        GameState.firstOrLastRoom = true;
+        GameState.isFirstRoom = true;
         SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 
@@ -141,9 +165,9 @@ public class CastleStartController : MonoBehaviour
 
     public void LeaveLeftDoor()
     {
-        if (GameState.firstOrLastRoom)
+        if (GameState.isFirstRoom)
         {
-            GameState.firstOrLastRoom = false;
+            GameState.isFirstRoom = false;
             SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
         }
         else
@@ -156,9 +180,22 @@ public class CastleStartController : MonoBehaviour
     public void LeaveRightDoor()
     {
 
-        if (GameState.firstOrLastRoom)
+        if (GameState.isFirstRoom)
         {
-            SceneManager.LoadScene("TorchScene", LoadSceneMode.Single);
+            if (GameState.hasTorch)
+            {
+                GameState.isFirstRoom = false;
+                GameState.isTorchRoom = true;
+                SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene("TorchScene", LoadSceneMode.Single);
+            }
+        }
+        else if (GameState.isTorchRoom)
+        {
+            SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
         }
         else
         {
