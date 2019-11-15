@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class TorchSceneController : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class TorchSceneController : MonoBehaviour
     public GameObject torch;
     public GameObject door;
     public GameObject canvas;
+
+    public Text text;
+
     private Animator playerAnimator;
     private PlayerWithTorch playerScript;
 
@@ -18,6 +22,9 @@ public class TorchSceneController : MonoBehaviour
         canvas.SetActive(false);
         playerAnimator = player.GetComponent<Animator>();
         playerScript = player.GetComponent<PlayerWithTorch>();
+
+        text.text = GameState.rightRoomFirstTime ? "You found a torch, and a door lies ahead of you, " +
+            "but you can smell a filthy stench. Do you wanna find out its source?" : "Oh, you are back again. Still curious about that stench?";
     }
 
     // Update is called once per frame
@@ -62,11 +69,12 @@ public class TorchSceneController : MonoBehaviour
     {
         Debug.Log("Clicked" + sceneState);
         sceneState = "walkToDoor";
+        GameState.rightRoomFirstTime = false;
     }
 
     public void GoBack()
     {
-
+        GameState.rightRoomFirstTime = false;
     }
 
 }
