@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 721c4dad6a1c62e48ac90903398f73f5
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: cf687f7bb815e6e47b582b367eeccf5e
+  - enabled: 1
+    path: Assets/Scenes/CastleStartScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/PitScene.unity
+    guid: 2d79c3fcef2d1d74bab2b4237b5bd566
+  - enabled: 1
+    path: Assets/Scenes/MonsterAttackScene.unity
+    guid: d847c9f6858c12549ba13675d76c2e36
+  - enabled: 1
+    path: Assets/Scenes/TorchScene.unity
+    guid: 2e4abc4abe737874a8b71c502bbe675a
+  - enabled: 1
+    path: Assets/Scenes/TreasureScene.unity
+    guid: 0b741c09da6e45249aea072ba5bdcbbb
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 9f3a16e511bf8bb4c8697d9e68aa93a0
   m_configObjects: {}
