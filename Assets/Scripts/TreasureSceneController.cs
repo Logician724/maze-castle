@@ -12,12 +12,14 @@ public class TreasureSceneController : MonoBehaviour
     public Transform shinyDiamond;
     public Transform exit;
 
+    public GameObject door;
     Animator playerAnimator;
 
     private int count = 300;
 
     private int phase = 0;
 
+    private bool openedDoor = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class TreasureSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(phase == 3)
+        if (phase == 3)
         {
             var heading = exit.transform.position - player.transform.position;
             var distance = heading.magnitude;
@@ -87,5 +89,12 @@ public class TreasureSceneController : MonoBehaviour
                 phase++;
             }
         }
+        if ( !openedDoor && Vector2.Distance(player.position, door.transform.position) <= 6.5)
+        {
+            door.GetComponent<Animator>().SetBool("isDoorOpen", true);
+            openedDoor = true;
+        }
     }
+
+
 }

@@ -214,6 +214,7 @@ MonoBehaviour:
   shinyDiamond: {fileID: 3864482553531795903, guid: a513cad1fe4be82459edbffe04da6157,
     type: 3}
   exit: {fileID: 587751605}
+  door: {fileID: 2091772705}
 --- !u!4 &458692703
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,3 +1175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2091772705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2006723122801630869, guid: a7f8888b2b4735a46bef32a842116b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1062930964}
+  m_PrefabAsset: {fileID: 0}
