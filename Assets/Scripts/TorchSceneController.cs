@@ -6,14 +6,16 @@ public class TorchSceneController : MonoBehaviour
     public GameObject player;
     public GameObject torch;
     public GameObject door;
+    public GameObject canvas;
     private Animator playerAnimator;
     private PlayerWithTorch playerScript;
 
-    private string sceneState = "idle";
+    private string sceneState = "pickUpTorch";
     private bool isTorchPickedUp = false;
     // Start is called before the first frame update
     void Start()
     {
+        canvas.SetActive(false);
         playerAnimator = player.GetComponent<Animator>();
         playerScript = player.GetComponent<PlayerWithTorch>();
     }
@@ -23,12 +25,8 @@ public class TorchSceneController : MonoBehaviour
     {
         switch (sceneState)
         {
-            case "walkToTorch":
-                playerAnimator.SetTrigger("walkToTorch");
-                sceneState = "pickUpTorch";
-                break;
             case "pickUpTorch":
-                if (Mathf.Abs(player.transform.position.z - torch.transform.position.z) <= 0.1)
+                if (Mathf.Abs(player.transform.position.z - torch.transform.position.z) <= 0.3)
                 {
                     playerAnimator.SetTrigger("pickUpTorch");
                     Invoke("AddTorchToPlayer", 1);
@@ -53,20 +51,22 @@ public class TorchSceneController : MonoBehaviour
     public void AddTorchToPlayer()
     {
         Destroy(torch);
+        canvas.SetActive(true);
+        GameState.hasTorch = true;
         playerScript.torch.SetActive(true);
-        sceneState = "walkToDoor";
     }
 
 
 
-    public void PickUpTorch()
+    public void GoRight()
     {
-        sceneState = "walkToTorch";
+        Debug.Log("Clicked" + sceneState);
+        sceneState = "walkToDoor";
     }
 
     public void GoBack()
     {
-        
+
     }
 
 }
