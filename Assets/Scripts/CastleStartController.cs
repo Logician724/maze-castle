@@ -115,22 +115,16 @@ public class CastleStartController : MonoBehaviour
 
     public void MoveRight()
     {
-        if (GameState.firstOrLastRoom)
-        {
-            isRightDoorChosen = true;
-            playerAnimator.SetTrigger("walk");
-            GameState.mainRoomFirstTime = false;
-        }
-        else
-        {
-            SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
-        }
+        isRightDoorChosen = true;
+        GameState.mainRoomFirstTime = false;
+        playerAnimator.SetTrigger("walk");
+
     }
 
     public void MoveLeft()
     {
-        playerAnimator.SetTrigger("walk");
         GameState.mainRoomFirstTime = false;
+        playerAnimator.SetTrigger("walk");
     }
 
     public void MoveBack()
