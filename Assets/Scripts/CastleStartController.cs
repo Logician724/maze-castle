@@ -18,10 +18,14 @@ public class CastleStartController : MonoBehaviour
     private bool isTurnMade = false;
     private bool isDoorOpened = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
+        if (text)
+        {
+            text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
             "an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; " +
             "you do not know what awaits ahead." : "So, where do you wanna go now?";
         choice1.text = GameState.mainRoomFirstTime ? "Go Right" : "Go Right";
@@ -54,6 +58,7 @@ public class CastleStartController : MonoBehaviour
                     {
                         rightDoorAnimator.SetBool("isDoorOpen", true);
                         isDoorOpened = true;
+                        Invoke("LeaveRightDoor", 1);
                     }
 
                 }
@@ -63,7 +68,7 @@ public class CastleStartController : MonoBehaviour
                     {
                         isDoorOpened = true;
                         leftDoorAnimator.SetBool("isDoorOpen", true);
-                        Invoke("GoToTorchRoom", 1);
+                        Invoke("LeaveLeftDoor", 1);
                     }
                 }
             }
@@ -99,5 +104,32 @@ public class CastleStartController : MonoBehaviour
         SceneManager.LoadScene("TorchScene", LoadSceneMode.Single);
     }
 
+
+    public void LeaveLeftDoor()
+    {
+        if (GameState.firstOrLastRoom)
+        {
+            SceneManager.LoadScene("DarkScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("PitScene", LoadSceneMode.Single);
+        }
+
+    }
+
+    public void LeaveRightDoor()
+    {
+
+        if (GameState.firstOrLastRoom)
+        {
+            SceneManager.LoadScene("TorchScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("TreasureScene", LoadSceneMode.Single);
+        }
+
+    }
 
 }

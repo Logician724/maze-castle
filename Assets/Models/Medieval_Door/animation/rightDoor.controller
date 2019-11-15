@@ -35,7 +35,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 571476579424688875}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdbd00ce03da3949a6bb4895e51e677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk: {fileID: 8300000, guid: 810a370d1308a6845a911c8baed8dec0, type: 3}
+  zWalk: {fileID: 0}
   punch: {fileID: 8300000, guid: 8c7aa1ce2ef40dc4db23c5d2c29f9cbb, type: 3}
   die: {fileID: 8300000, guid: a1e910bd76a067d46a34241905f273e9, type: 3}
   door: {fileID: 8300000, guid: 5ca80d5e40896904f8f42adfeca08b2e, type: 3}
+  playerWalk: {fileID: 0}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -343,8 +344,8 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_AnyStatePosition: {x: 240, y: 80, z: 0}
   m_EntryPosition: {x: 40, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 480, y: 90, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -5469333034401694643}
