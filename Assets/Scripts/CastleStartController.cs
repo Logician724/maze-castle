@@ -41,8 +41,6 @@ public class CastleStartController : MonoBehaviour
             if (Mathf.Abs(playerAnimator.transform.position.z - leftDoorAnimator.transform.position.z) <= 0.2)
             {
 
-                Debug.Log(playerAnimator.transform.position.z);
-                Debug.Log(leftDoorAnimator.transform.position.z);
                 playerAnimator.SetBool("isRight", isRightDoorChosen);
                 playerAnimator.SetBool("isLeft", !isRightDoorChosen);
                 isTurnMade = true;

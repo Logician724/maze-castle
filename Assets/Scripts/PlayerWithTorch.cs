@@ -9,7 +9,15 @@ public class PlayerWithTorch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        torch.SetActive(false);
+        if (!GameState.hasTorch)
+        {
+            torch.SetActive(false);
+        }
+        else
+        {
+            torch.SetActive(true);
+        }
+
     }
 
     // Update is called once per frames
