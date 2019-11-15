@@ -1,7 +1,16 @@
+============Centre first time===============
 You are exploring an old castle in look for an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; you do not know what awaits ahead.
 
 A) Pick the right door
 B) Pick the left door
+============================================
+
+============Centre other times===============
+So, where do you wanna go now?
+
+A) Pick the right door
+B) Pick the left door
+============================================
 
 =============RIGHT (First time)=============
 You found a torch, and a door lies ahead of you, but you can smell a filthy stench. Do you wanna find out its source?
