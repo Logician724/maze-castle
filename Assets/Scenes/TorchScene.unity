@@ -395,6 +395,8 @@ MonoBehaviour:
   door: {fileID: 255687557}
   canvas: {fileID: 392763336}
   text: {fileID: 343801320}
+  choice1: {fileID: 871393417}
+  choice2: {fileID: 871393416}
 --- !u!4 &560262999
 Transform:
   m_ObjectHideFlags: 0
@@ -757,6 +759,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d646d7b5d6f8c43bef8c1561290aec, type: 3}
+--- !u!114 &871393416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4330936895093430790, guid: d0d646d7b5d6f8c43bef8c1561290aec,
+    type: 3}
+  m_PrefabInstance: {fileID: 871393415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &871393417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4330936893953105056, guid: d0d646d7b5d6f8c43bef8c1561290aec,
+    type: 3}
+  m_PrefabInstance: {fileID: 871393415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &901822774
 GameObject:
   m_ObjectHideFlags: 3
