@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ecdbd00ce03da3949a6bb4895e51e677
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - zWalk: {fileID: 8300000, guid: 810a370d1308a6845a911c8baed8dec0, type: 3}
+  - punch: {fileID: 8300000, guid: 8c7aa1ce2ef40dc4db23c5d2c29f9cbb, type: 3}
+  - die: {fileID: 8300000, guid: a1e910bd76a067d46a34241905f273e9, type: 3}
+  - door: {fileID: 8300000, guid: 5ca80d5e40896904f8f42adfeca08b2e, type: 3}
+  - playerWalk: {fileID: 8300000, guid: b5e10f0e373393e4b86f6ba4c04c6bb7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

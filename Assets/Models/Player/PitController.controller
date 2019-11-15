@@ -22,6 +22,23 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-2718157327350262521
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdbd00ce03da3949a6bb4895e51e677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zWalk: {fileID: 8300000, guid: 810a370d1308a6845a911c8baed8dec0, type: 3}
+  punch: {fileID: 8300000, guid: 8c7aa1ce2ef40dc4db23c5d2c29f9cbb, type: 3}
+  die: {fileID: 8300000, guid: a1e910bd76a067d46a34241905f273e9, type: 3}
+  door: {fileID: 8300000, guid: 5ca80d5e40896904f8f42adfeca08b2e, type: 3}
+  playerWalk: {fileID: 8300000, guid: b5e10f0e373393e4b86f6ba4c04c6bb7, type: 3}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -90,7 +107,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5554740658618120131}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -2718157327350262521}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -101,7 +119,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: -203655887218126122, guid: c7999f242704d15448c806d93c3dd345,
     type: 3}
-  m_Tag: 
+  m_Tag: playWalk
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 

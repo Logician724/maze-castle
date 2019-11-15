@@ -76,19 +76,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: GetsHit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dies
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -172,7 +172,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 5947983004986800990}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -183,7 +184,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: -203655887218126122, guid: e2f8d540e2b9c9843b502f3726f13a62,
     type: 3}
-  m_Tag: 
+  m_Tag: die
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -241,6 +242,23 @@ AnimatorState:
   m_MirrorParameter: PlayerWalksIn
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &5947983004986800990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdbd00ce03da3949a6bb4895e51e677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zWalk: {fileID: 8300000, guid: 810a370d1308a6845a911c8baed8dec0, type: 3}
+  punch: {fileID: 8300000, guid: 8c7aa1ce2ef40dc4db23c5d2c29f9cbb, type: 3}
+  die: {fileID: 8300000, guid: a1e910bd76a067d46a34241905f273e9, type: 3}
+  door: {fileID: 0}
+  playerWalk: {fileID: 0}
 --- !u!114 &6433953396582903231
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,6 +271,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8c3c2959eb7284bb4d20b105bb13f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8599328242104590840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdbd00ce03da3949a6bb4895e51e677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zWalk: {fileID: 0}
+  punch: {fileID: 8300000, guid: 8c7aa1ce2ef40dc4db23c5d2c29f9cbb, type: 3}
+  die: {fileID: 8300000, guid: a1e910bd76a067d46a34241905f273e9, type: 3}
+  door: {fileID: 0}
+  playerWalk: {fileID: 0}
 --- !u!1102 &9068525604331665331
 AnimatorState:
   serializedVersion: 5
