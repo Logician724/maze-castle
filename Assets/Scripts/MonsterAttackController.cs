@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MonsterAttackController : MonoBehaviour
 {
-    public Transform player;
-    public Transform zombie1;
-    public Transform zombie2;
+    public GameObject player;
+    public GameObject zombie1;
+    public GameObject zombie2;
     public Transform deathArea;
 
     Animator playerAnimator;
@@ -19,9 +17,10 @@ public class MonsterAttackController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerAnimator = player.GetComponent<Animator>();
-        zombie1Animator = zombie1.GetComponent<Animator>();
-        zombie2Animator = zombie2.GetComponent<Animator>();
+        player.GetComponent<AudioSource>().pitch = 1.5f;
+        playerAnimator = player.transform.GetComponent<Animator>();
+        zombie1Animator = zombie1.transform.GetComponent<Animator>();
+        zombie2Animator = zombie2.transform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -77,6 +76,15 @@ public class MonsterAttackController : MonoBehaviour
                 playerAnimator.SetTrigger("Idle");
                 zombie1Animator.SetTrigger("WalksToPlayer");
                 zombie2Animator.SetTrigger("WalksToPlayer");
+
+                player.GetComponent<AudioSource>().pitch = 1.0f;
+                if (!GameState.hasTorch)
+                {
+                    Light obj = zombie1.GetComponentInChildren<Light>(true);
+                    obj.gameObject.SetActive(true);
+                    obj = zombie2.GetComponentInChildren<Light>(true);
+                    obj.gameObject.SetActive(true);
+                }
 
                 phase++;
             }

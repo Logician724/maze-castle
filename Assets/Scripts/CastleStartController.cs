@@ -13,6 +13,8 @@ public class CastleStartController : MonoBehaviour
     public Text choice1;
     public Text choice2;
 
+    public Button choice3;
+
     // if the right door is not chosen, the left door is by default
     private bool isRightDoorChosen = false;
     private bool isTurnMade = false;
@@ -23,13 +25,29 @@ public class CastleStartController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (text)
+        if (GameState.firstOrLastRoom)
         {
             text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
             "an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; " +
             "you do not know what awaits ahead." : "So, where do you wanna go now?";
-        choice1.text = GameState.mainRoomFirstTime ? "Go Right" : "Go Right";
-        choice2.text = GameState.mainRoomFirstTime ? "Go Left" : "Go Left";
+            choice1.text = GameState.mainRoomFirstTime ? "Go Right" : "Go Right";
+            choice2.text = GameState.mainRoomFirstTime ? "Go Left" : "Go Left";
+        }
+        else
+        {
+            if (GameState.hasTorch)
+            {
+
+            }
+            else
+            {
+                text.text = "You can not see anything. It is totally dark.";
+                choice1.text = "Move forward. Hopefully, you will bump into a door.";
+                choice1.fontSize = 40;
+                choice2.text = "Turn back. Maybe try the other door.";
+                choice2.fontSize = 40;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -56,7 +74,7 @@ public class CastleStartController : MonoBehaviour
                     {
                         rightDoorAnimator.SetBool("isDoorOpen", true);
                         isDoorOpened = true;
-                        Invoke("LeaveRightDoor", 1);
+                        Invoke("LeaveRightDoor", 1.5f);
                     }
 
                 }
@@ -66,14 +84,12 @@ public class CastleStartController : MonoBehaviour
                     {
                         isDoorOpened = true;
                         leftDoorAnimator.SetBool("isDoorOpen", true);
-                        Invoke("LeaveLeftDoor", 1);
+                        Invoke("LeaveLeftDoor", 1.5f);
                     }
                 }
             }
 
         }
-
-
     }
 
 
@@ -86,15 +102,28 @@ public class CastleStartController : MonoBehaviour
 
     public void MoveRight()
     {
-        isRightDoorChosen = true;
-        playerAnimator.SetTrigger("walk");
-        GameState.mainRoomFirstTime = false;
+        if (!GameState.firstOrLastRoom)
+        {
+            SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            isRightDoorChosen = true;
+            playerAnimator.SetTrigger("walk");
+            GameState.mainRoomFirstTime = false;
+        }
     }
 
     public void MoveLeft()
     {
         playerAnimator.SetTrigger("walk");
         GameState.mainRoomFirstTime = false;
+    }
+
+    public void MoveBack()
+    {
+        GameState.firstOrLastRoom = true;
+        SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 
     public void GoToTorchRoom()
@@ -107,6 +136,7 @@ public class CastleStartController : MonoBehaviour
     {
         if (GameState.firstOrLastRoom)
         {
+            GameState.firstOrLastRoom = false;
             SceneManager.LoadScene("DarkScene", LoadSceneMode.Single);
         }
         else

@@ -20,7 +20,7 @@ A) Check the source of the stench.
 B) Turn back. It may be dangerous.
 ============================================
 
-=============RIGHT (Further times)=============
+=============RIGHT (Further times)=============DONE
 Oh, you are back again. Still curious about that stench?
 
 A) Yes! Let's see what is behind that door.
@@ -42,13 +42,6 @@ You see a door on the opposite wall.
 A) Let's see what is behind it.
 B) Hmmm...no... let's go back again. 
 ======================================================
-
-=============LEFT (TORCH, Other times)=================
-We are back here again.
-
-A) Go through the door.
-B) Turn back to the main hall.
-==========================================
 
 ==============LEFT & TORCH & DOOR=========
 Ah sh*t, here we go again!

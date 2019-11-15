@@ -31,7 +31,8 @@ public class stateSound : StateMachineBehaviour
         else if (stateInfo.IsTag("door"))
         {
             audioSrc.PlayOneShot(door);
-        } else if (stateInfo.IsTag("playWalk"))
+        }
+        else if (stateInfo.IsTag("playWalk"))
         {
             audioSrc.PlayOneShot(playerWalk);
         }
@@ -71,9 +72,13 @@ public class stateSound : StateMachineBehaviour
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (stateInfo.IsTag("playWalk"))
+        {
+            audioSrc.Stop();
+        }
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

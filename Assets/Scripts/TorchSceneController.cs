@@ -51,6 +51,7 @@ public class TorchSceneController : MonoBehaviour
                 }
                 break;
             case "walkToDoor":
+                player.GetComponent<AudioSource>().pitch = 1.5f;
                 playerAnimator.SetTrigger("walkToDoor");
                 sceneState = "walkingToDoor";
                 break;
@@ -59,6 +60,7 @@ public class TorchSceneController : MonoBehaviour
                 {
                     door.GetComponent<Animator>().SetBool("isDoorOpen", true);
                     sceneState = "final";
+                    Invoke("GoToMonsterScene", 1.5f);
                 }
                 break;
             default: break;
@@ -73,6 +75,10 @@ public class TorchSceneController : MonoBehaviour
         playerScript.torch.SetActive(true);
     }
 
+    public void GoToMonsterScene()
+    {
+        SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
+    }
 
     public void GoRight()
     {
@@ -83,6 +89,7 @@ public class TorchSceneController : MonoBehaviour
     public void GoBack()
     {
         GameState.rightRoomFirstTime = false;
+        GameState.firstOrLastRoom = true;
         SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 
