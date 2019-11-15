@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +10,8 @@ public class CastleStartController : MonoBehaviour
     public Animator playerAnimator;
 
     public Text text;
+    public Text choice1;
+    public Text choice2;
 
     // if the right door is not chosen, the left door is by default
     private bool isRightDoorChosen = false;
@@ -28,8 +28,8 @@ public class CastleStartController : MonoBehaviour
             text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
             "an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; " +
             "you do not know what awaits ahead." : "So, where do you wanna go now?";
-        }
-
+        choice1.text = GameState.mainRoomFirstTime ? "Go Right" : "Go Right";
+        choice2.text = GameState.mainRoomFirstTime ? "Go Left" : "Go Left";
     }
 
     // Update is called once per frame

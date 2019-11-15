@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class pitScript : MonoBehaviour
 {
+    public GameObject canvas;
+
     private Animator anim;
     private AudioSource src;
     private bool isFalling = false;
     private bool soundTriggered = false;
-
 
     private float startFall;
 
@@ -31,6 +31,7 @@ public class pitScript : MonoBehaviour
             {
                 anim.SetBool("AtPit", true);
                 isFalling = true;
+                canvas.SetActive(true);
             }
         }
         else if (isFalling && tmp[0].clip.name.Equals("plFalling"))

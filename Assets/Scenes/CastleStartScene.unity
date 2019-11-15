@@ -213,6 +213,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
+--- !u!114 &245172331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4330936893953105056, guid: d0d646d7b5d6f8c43bef8c1561290aec,
+    type: 3}
+  m_PrefabInstance: {fileID: 4330936894262998609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &392489426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4330936895093430790, guid: d0d646d7b5d6f8c43bef8c1561290aec,
+    type: 3}
+  m_PrefabInstance: {fileID: 4330936894262998609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &412614012
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +636,8 @@ MonoBehaviour:
   leftDoorAnimator: {fileID: 1195217935}
   playerAnimator: {fileID: 2134676642}
   text: {fileID: 4330936894262998610}
+  choice1: {fileID: 245172331}
+  choice2: {fileID: 392489426}
 --- !u!1 &1967872184
 GameObject:
   m_ObjectHideFlags: 3
