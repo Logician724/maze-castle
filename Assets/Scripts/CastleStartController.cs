@@ -61,6 +61,7 @@ public class CastleStartController : MonoBehaviour
                     {
                         isDoorOpened = true;
                         leftDoorAnimator.SetBool("isDoorOpen", true);
+                        Invoke("GoToTorchRoom", 1);
                     }
                 }
             }
@@ -93,7 +94,7 @@ public class CastleStartController : MonoBehaviour
 
     public void GoToTorchRoom()
     {
-        
+        SceneManager.LoadScene("TorchScene", LoadSceneMode.Single);
     }
 
 
