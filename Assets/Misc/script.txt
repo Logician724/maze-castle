@@ -36,13 +36,6 @@ A) Move forward. Hopefully, you will bump into a door.
 B) Turn back. Maybe try the other door.
 ==========================================
 
-=============LEFT (TORCH, First Time)=================
-You see a door on the opposite wall.
-
-A) Let's see what is behind it.
-B) Hmmm...no... let's go back again. 
-======================================================
-
 ==============LEFT & TORCH & DOOR=========
 Ah sh*t, here we go again!
 You can feel a breeze coming from the left door. Could it be the way out?

@@ -9,6 +9,9 @@ public class CastleStartController : MonoBehaviour
     public Animator leftDoorAnimator;
     public Animator playerAnimator;
 
+    public GameObject torch1;
+    public GameObject torch2;
+
     public Text text;
     public Text choice1;
     public Text choice2;
@@ -27,21 +30,31 @@ public class CastleStartController : MonoBehaviour
     {
         if (GameState.firstOrLastRoom)
         {
+            torch1.SetActive(true);
+            torch2.SetActive(true);
+
             text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
             "an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; " +
             "you do not know what awaits ahead." : "So, where do you wanna go now?";
-            choice1.text = GameState.mainRoomFirstTime ? "Go Right" : "Go Right";
-            choice2.text = GameState.mainRoomFirstTime ? "Go Left" : "Go Left";
+            choice1.text = "Go Right";
+            choice2.text = "Go Left";
         }
         else
         {
             if (GameState.hasTorch)
             {
+                choice3.gameObject.SetActive(true);
 
+                text.text = "Ah damn! Two doors again? " +
+                    "You can feel a breeze coming from the left door. Could it be the way out?";
+                choice1.text = "Hmm no..let's go right.";
+                choice1.fontSize = 40;
+                choice2.text = "Let's check it out. I am sick of this castle!";
+                choice2.fontSize = 40;
             }
             else
             {
-                text.text = "You can not see anything. It is totally dark.";
+                text.text = "You can barely see anything. It is totally dark.";
                 choice1.text = "Move forward. Hopefully, you will bump into a door.";
                 choice1.fontSize = 40;
                 choice2.text = "Turn back. Maybe try the other door.";
@@ -102,15 +115,15 @@ public class CastleStartController : MonoBehaviour
 
     public void MoveRight()
     {
-        if (!GameState.firstOrLastRoom)
-        {
-            SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
-        }
-        else
+        if (GameState.firstOrLastRoom)
         {
             isRightDoorChosen = true;
             playerAnimator.SetTrigger("walk");
             GameState.mainRoomFirstTime = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("MonsterAttackScene", LoadSceneMode.Single);
         }
     }
 
@@ -137,7 +150,7 @@ public class CastleStartController : MonoBehaviour
         if (GameState.firstOrLastRoom)
         {
             GameState.firstOrLastRoom = false;
-            SceneManager.LoadScene("DarkScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
         }
         else
         {
