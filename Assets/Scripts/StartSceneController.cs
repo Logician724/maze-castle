@@ -7,7 +7,7 @@ public class StartSceneController : MonoBehaviour
 {
     public void StartButton()
     {
-        SceneManager.LoadScene("CastleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 
     public void CreditsButton()

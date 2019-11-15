@@ -42,6 +42,7 @@ public class pitScript : MonoBehaviour
             {
                 startFall = Time.timeSinceLevelLoad;
                 soundTriggered = true;
+                src.pitch = 1;
                 src.PlayOneShot(src.clip);
             }
 

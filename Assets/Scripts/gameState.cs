@@ -5,4 +5,6 @@
 
     public static bool isFirstRoom = true;
     public static bool isTorchRoom = false;
+
+    public static bool goodGameOver = false;
 }

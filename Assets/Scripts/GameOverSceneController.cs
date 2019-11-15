@@ -1,13 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverSceneController : MonoBehaviour
 {
+    public Text gameOver;
+
+    private void Start()
+    {
+        if (GameState.goodGameOver)
+        {
+            gameOver.text = "You won!";
+        }
+    }
+
     public void RestartButton()
     {
-        SceneManager.LoadScene("CastleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("CastleStartScene", LoadSceneMode.Single);
     }
 
     public void MainMenuButton()

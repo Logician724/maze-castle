@@ -23,6 +23,7 @@ public class TreasureSceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameState.goodGameOver = true;
         playerAnimator = player.GetComponent<Animator>();
     }
 
