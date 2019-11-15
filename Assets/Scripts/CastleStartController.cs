@@ -21,9 +21,12 @@ public class CastleStartController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
+        if(text){
+            text.text = GameState.mainRoomFirstTime ? "You are exploring an old castle in look for " +
             "an old long-lost treasure. But now you are stuck in this room, and you have to tread carefully; " +
             "you do not know what awaits ahead." : "So, where do you wanna go now?";
+        }
+        
     }
 
     // Update is called once per frame
@@ -97,5 +100,10 @@ public class CastleStartController : MonoBehaviour
         SceneManager.LoadScene("TorchScene", LoadSceneMode.Single);
     }
 
+
+    public void DarkRoomBack()
+    {
+        
+    }
 
 }
