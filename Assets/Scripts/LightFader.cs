@@ -21,6 +21,6 @@ public class LightFader : MonoBehaviour
 
     public void FadeTorch()
     {
-        torchelight.IntensityLight --;
+        torchelight.IntensityLight -= 1.5f;
     }
 }
