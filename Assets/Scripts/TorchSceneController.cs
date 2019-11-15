@@ -47,6 +47,7 @@ public class TorchSceneController : MonoBehaviour
                     playerAnimator.SetTrigger("pickUpTorch");
                     Invoke("AddTorchToPlayer", 1);
                     sceneState = "temp";
+                    GameState.hasTorch = true;
                 }
                 break;
             case "walkToDoor":
