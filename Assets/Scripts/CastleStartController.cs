@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CastleStartController : MonoBehaviour
 {
@@ -80,6 +81,11 @@ public class CastleStartController : MonoBehaviour
     public void MoveLeft()
     {
         playerAnimator.SetTrigger("walk");
+    }
+
+    public void GoToTorchRoom()
+    {
+        
     }
 
 
