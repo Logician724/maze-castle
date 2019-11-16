@@ -31,12 +31,13 @@ public class pitScript : MonoBehaviour
             {
                 anim.SetBool("AtPit", true);
                 isFalling = true;
-                canvas.SetActive(true);
             }
         }
         else if (isFalling && tmp[0].clip.name.Equals("plFalling"))
         {
             anim.applyRootMotion = false;
+
+            canvas.SetActive(true);
 
             if (!soundTriggered)
             {
